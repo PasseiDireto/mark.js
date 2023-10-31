@@ -1,7 +1,7 @@
 /*!***************************************************
-* mark.js v9.0.0
+* mark.js v10.2.0
 * https://markjs.io/
-* Copyright (c) 2014–2018, Julian Kühnel
+* Copyright (c) 2014–2023, Julian Kühnel
 * Released under the MIT license https://git.io/vwTVl
 *****************************************************/
 
@@ -453,7 +453,7 @@
       return str;
     }
     createMergedBlanksRegExp(str) {
-      return str.replace(/[\s]+/gmi, '[\\s]+');
+      return str.replace(/[\s]+/gmi, '[\\s]*');
     }
     createAccuracyRegExp(str) {
       const chars = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~¡¿';
@@ -729,7 +729,7 @@
             (match = regex.exec(node.textContent)) !== null &&
             match[matchIdx] !== ''
           ) {
-            if (this.opt.separateGroups) {
+            if (this.opt.separateGroups && match.length !== 1){
               node = this.separateGroups(
                 node,
                 match,
