@@ -20,6 +20,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'git config --global url.https://github.com/.insteadOf git://github.com/'
                 sh 'npm install'
             }
         }
