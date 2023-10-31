@@ -57,22 +57,6 @@ pipeline {
             }
         }
 
-        stage('SONARQUBE') {
-            when {
-                branch 'master'
-            }
-            environment {
-                SONAR_SCANNER_HOME = tool 'LocalSonarScanner'
-            }
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh """
-                        sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner"
-                    """
-                }
-            }
-        }
-
         stage('Publish') {
             when {
                 anyOf {
