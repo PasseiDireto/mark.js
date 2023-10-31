@@ -349,7 +349,7 @@ class RegExpCreator {
    * @return {string}
    */
   createMergedBlanksRegExp(str) {
-    return str.replace(/[\s]+/gmi, '[\\s]+');
+    return str.replace(/[\s]+/gmi, '[\\s]*');
   }
 
   /**
