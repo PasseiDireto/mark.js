@@ -64,5 +64,8 @@
     "rollup-plugin-commonjs": "^9.0.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-terser": "^2.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://verdaccio.passeidireto.com"
   }
 }
